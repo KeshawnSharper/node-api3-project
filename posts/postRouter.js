@@ -20,7 +20,7 @@ postRouter.delete('/:id', validatePostId,(req, res) => {
 
 postRouter.put('/:id', validatePostId,validateChanges,(req, res) => {
   // do your magic!
-db.update(req.post.id,req.body).then(i => db.getById(req.post.id).then(i => res.status(200).json(i)))
+db.update(req.post.id,req.body).then(i => db.getById(req.post.id ).then(i => res.status(200).json(i)))
 });
 
 // custom middleware
