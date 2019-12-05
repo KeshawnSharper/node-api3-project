@@ -7,10 +7,10 @@ server.use(express.json());
 server.use(logger);
 
 server.use('/api/users', userRouter);
-
+const stretch_goal = process.env.stretch_goal || "too easy"
 
 server.get('/', (req, res) => {
-  res.send(`<h2>${process.env.stretch_goal}</h2>`);
+  res.send(`<h2>${stretch_goal}</h2>`);
 });
 
 function logger (req,res,next){
